@@ -1,3 +1,6 @@
 .idea
 .vscode
 *.mp4
+labeled_chunks
+mnist_test_seq.npy
+labeled_chunks.zip

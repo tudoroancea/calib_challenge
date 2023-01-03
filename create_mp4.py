@@ -2,14 +2,14 @@ import numpy as np
 import torch
 import cv2
 
-for i in range(5,10):
+for i in range(5):
     # open video from labeled dir
-    cap = cv2.VideoCapture(f'unlabeled/{i}.hevc')
+    cap = cv2.VideoCapture(f'labeled/{i}.hevc')
     # convert video to mp4 with right height and width
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     height= cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
     width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
-    out = cv2.VideoWriter(f'unlabeled/{i}.mp4', fourcc, 20.0, (int(width), int(height)))
+    out = cv2.VideoWriter(f'labeled/{i}.mp4', fourcc, 20.0, (int(width), int(height)))
     # read video frame by frame
     while(cap.isOpened()):
         ret, frame = cap.read()
